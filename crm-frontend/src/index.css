@@ -1,0 +1,41 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Colors */
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --background: #f4f7fc;
+  --card: #ffffff;
+
+  --text: #1f2937;
+  --text-light: #6b7280;
+
+  --border: #d1d5db;
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* Body */
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: inherit;
+}
+
+/* React Root */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
