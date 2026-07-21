@@ -1,0 +1,109 @@
+.table-container{
+    margin-top:30px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.lead-table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.lead-table thead{
+
+    background:#2563eb;
+    color:white;
+
+}
+
+.lead-table th{
+
+    padding:18px;
+    text-align:left;
+
+}
+
+.lead-table td{
+
+    padding:16px;
+    border-bottom:1px solid #eee;
+
+}
+
+.lead-table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+.status{
+
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+
+}
+
+.new{
+
+    background:#22c55e;
+
+}
+
+.qualified{
+
+    background:#3b82f6;
+
+}
+
+.contacted{
+
+    background:#f59e0b;
+
+}
+.action-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.action-buttons button{
+
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    color:white;
+
+}
+
+.view-btn{
+
+    background:#3b82f6;
+
+}
+
+.edit-btn{
+
+    background:#22c55e;
+
+}
+
+.delete-btn{
+
+    background:#ef4444;
+
+}
+
+.action-buttons button:hover{
+
+    transform:scale(1.1);
+
+}

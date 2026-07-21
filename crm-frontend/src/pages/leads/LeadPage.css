@@ -1,0 +1,89 @@
+.lead-page{
+    padding:30px;
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+/* Header */
+
+.lead-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+
+}
+
+.lead-header h1{
+
+    font-size:32px;
+    color:#1f2937;
+    font-weight:700;
+
+}
+
+/* Button */
+
+.add-btn{
+
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.add-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Toolbar */
+
+.toolbar{
+
+    display:flex;
+    gap:15px;
+    align-items:center;
+    flex-wrap:wrap;
+
+}
+
+/* Search */
+
+.search-box{
+
+    width:350px;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #d1d5db;
+    font-size:15px;
+    outline:none;
+    background:white;
+
+}
+
+.search-box:focus{
+
+    border:1px solid #2563eb;
+
+}
+
+/* Dropdown */
+
+.filter{
+
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #d1d5db;
+    background:white;
+    min-width:150px;
+    cursor:pointer;
+
+}
