@@ -1,89 +1,106 @@
-.lead-page{
-    padding:30px;
-    background:#f5f7fb;
-    min-height:100vh;
+.lead-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 30px;
 }
 
 /* Header */
 
-.lead-header{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:30px;
-
+.lead-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
-.lead-header h1{
-
-    font-size:32px;
-    color:#1f2937;
-    font-weight:700;
-
+.lead-header h1 {
+  font-size: 32px;
+  color: #1e293b;
+  font-weight: 700;
 }
 
-/* Button */
+/* Add Button */
 
-.add-btn{
-
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:8px;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
-
+.add-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
 }
 
-.add-btn:hover{
-
-    background:#1d4ed8;
-
+.add-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37,99,235,.25);
 }
 
 /* Toolbar */
 
-.toolbar{
-
-    display:flex;
-    gap:15px;
-    align-items:center;
-    flex-wrap:wrap;
-
+.toolbar {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 24px rgba(15,23,42,.08);
+  flex-wrap: wrap;
 }
 
 /* Search */
 
-.search-box{
-
-    width:350px;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #d1d5db;
-    font-size:15px;
-    outline:none;
-    background:white;
-
+.search-box {
+  flex: 1;
+  min-width: 260px;
+  padding: 12px 15px;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
 }
 
-.search-box:focus{
-
-    border:1px solid #2563eb;
-
+.search-box:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.12);
 }
 
-/* Dropdown */
+/* Filters */
 
-.filter{
+.filter {
+  min-width: 170px;
+  padding: 12px;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  background: white;
+  font-size: 15px;
+}
 
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #d1d5db;
-    background:white;
-    min-width:150px;
-    cursor:pointer;
+.filter:focus {
+  border-color: #2563eb;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+  .lead-header{
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+  }
+
+  .toolbar{
+    flex-direction:column;
+  }
+
+  .search-box,
+  .filter{
+    width:100%;
+  }
 
 }

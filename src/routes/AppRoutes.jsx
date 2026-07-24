@@ -4,6 +4,7 @@ import Login from "../pages/Login/Login";
 import Onboarding from "../pages/Onboarding/Onboarding";
 import LeadPage from "../pages/leads/LeadPage";
 import ContactPage from "../pages/contacts/ContactPage";
+import ContactDetails from "../pages/ContactDetails/ContactDetails";
 import OrganisationPage from "../pages/organisations/OrganisationPage";
 import LeadDetails from "../pages/LeadDetails/LeadDetails";
 
@@ -16,6 +17,7 @@ function AppRoutes() {
                 <Route path="/Onboarding" element={<Onboarding />} />
                 <Route path="/leads" element={<LeadPage />} />
                 <Route path="/contacts" element={<ContactPage />} />
+                <Route path="/contacts/:id" element={<ContactDetails />}/>
                 <Route path="/organizations" element={<OrganisationPage />} />
                 <Route path="/leads/:id" element={<LeadDetails />} />
             </Routes>

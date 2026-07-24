@@ -189,7 +189,7 @@
 
 /* ===== Button ===== */
 
-button{
+/*button{
 
     width:100%;
 
@@ -209,7 +209,7 @@ button{
 
     transition:.3s;
 
-}
+}*/
 
 button:hover{
 

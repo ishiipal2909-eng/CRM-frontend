@@ -1,41 +1,39 @@
-/* Reset */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Root Colors */
-
-:root {
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-
-  --background: #f4f7fc;
-  --card: #ffffff;
-
-  --text: #1f2937;
-  --text-light: #6b7280;
-
-  --border: #d1d5db;
-
-  --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-
-  font-family: "Inter", "Segoe UI", sans-serif;
-}
-
-/* Body */
-
 body {
-  background: var(--background);
-  color: var(--text);
-  font-family: inherit;
+  font-family: "Inter", sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  overflow-x: hidden;
 }
 
-/* React Root */
+a {
+  text-decoration: none;
+}
 
-#root {
-  width: 100%;
-  min-height: 100vh;
+button {
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+input,
+select {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
 }
