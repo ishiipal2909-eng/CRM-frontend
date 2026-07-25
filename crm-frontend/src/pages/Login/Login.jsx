@@ -1,50 +1,26 @@
 import "./Login.css";
-import LoginForm from "./LoginForm";
+import { useNavigate } from "react-router-dom";
+import BrandPanel from "../../components/auth/BrandPanel";
+import LoginForm from "../../components/auth/LoginForm";
 
 function Login() {
-  return (
-    <div className="login-page">
+    return (
+        <div className="login-page">
 
-      {/* Left Section */}
-      <div className="login-left">
+            <BrandPanel />
 
-        <div className="brand">
+            <div className="login-right">
 
-          <div className="logo">
-            CRM
-          </div>
+                <div className="login-card">
 
-          <h1>Customer Relationship Management</h1>
+                    <LoginForm />
 
-          <p>
-            Manage leads, customers and sales
-            from one powerful platform.
-          </p>
+                </div>
+
+            </div>
 
         </div>
-
-      </div>
-
-      {/* Right Section */}
-
-      <div className="login-right">
-
-        <div className="login-card">
-
-          <h2>Welcome Back 👋</h2>
-
-          <p>
-            Sign in to continue
-          </p>
-
-          <LoginForm />
-
-        </div>
-
-      </div>
-
-    </div>
-  );
+    );
 }
 
 export default Login;

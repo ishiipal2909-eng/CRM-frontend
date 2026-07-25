@@ -1,0 +1,159 @@
+/* ==========================================================
+   STEPPER
+========================================================== */
+
+.stepper{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    position:relative;
+
+    margin-bottom:45px;
+}
+
+/* ==========================================================
+   STEP
+========================================================== */
+
+.step-wrapper{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    position:relative;
+}
+
+.step-circle{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    background:#F3F6FC;
+
+    border:1px solid #D8E3F2;
+
+    color:#64748B;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.3s ease;
+
+    z-index:2;
+}
+
+.step-circle.active{
+
+    background:linear-gradient(135deg,#1E40AF,#2563EB);
+
+    color:#fff;
+
+    border:none;
+
+    box-shadow:0 8px 20px rgba(37,99,235,.30);
+}
+
+/* ==========================================================
+   STEP TITLE
+========================================================== */
+
+.step-title{
+
+    margin-top:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#64748B;
+
+    transition:.3s;
+}
+
+.step-title.active{
+
+    color:#111827;
+}
+
+/* ==========================================================
+   CONNECTING LINE
+========================================================== */
+
+.step-line{
+
+    position:absolute;
+
+    top:22px;
+
+    left:60%;
+
+    width:80%;
+
+    height:2px;
+
+    background:#DCE5F3;
+
+    z-index:1;
+}
+
+.step-line.active{
+
+    background:#2563EB;
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+.stepper{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:25px;
+}
+
+.step-wrapper{
+
+    width:100%;
+
+    flex-direction:row;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.step-title{
+
+    margin-top:0;
+}
+
+.step-line{
+
+    display:none;
+}
+
+}

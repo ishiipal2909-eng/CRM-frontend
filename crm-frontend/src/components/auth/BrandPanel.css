@@ -1,0 +1,226 @@
+/* Left Panel */
+
+.brand-panel {
+    flex: 1;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 60px;
+
+    background: linear-gradient(
+    135deg,
+    #0A2E73 0%,
+    #123C91 35%,
+    #1D4ED8 70%,
+    #2563EB 100%
+    );
+     background:linear-gradient(
+        -45deg,
+        #0A2E73,
+        #123C91,
+        #1D4ED8,
+        #2563EB
+    );
+
+    background-size:300% 300%;
+
+    animation:gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+
+        background-position:0% 50%;
+    }
+
+    50%{
+
+        background-position:100% 50%;
+    }
+
+    100%{
+
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* Decorative Circles */
+
+.brand-panel::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+
+    top:-220px;
+    right:-220px;
+}
+
+.brand-panel::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+
+    bottom:-180px;
+    left:-180px;
+}
+
+
+/* Logo */
+
+.company-logo{
+
+    width:180px;
+    height:180px;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+    padding:5px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.20);
+
+    margin-bottom:45px;
+
+    z-index:2;
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+
+        box-shadow:
+        0 15px 40px rgba(0,0,0,.18);
+    }
+
+    to{
+
+        box-shadow:
+        0 15px 60px rgba(255,255,255,.35);
+    }
+}
+
+
+/* Heading */
+
+.brand-panel h1{
+
+    color:#fff;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    line-height:1.25;
+
+    max-width:520px;
+
+    margin:0;
+}
+
+
+/* Developed By */
+
+.developed-by{
+
+    margin-top:30px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:16px;
+
+    letter-spacing:.4px;
+
+    animation:fadeUp 1.8s ease;
+}
+
+/* Company */
+
+.brand-panel h3{
+
+    color:#fff;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+    max-width:520px;
+
+    margin-top:10px;
+}
+
+
+/* Button */
+
+.crm-tag{
+
+    margin-top:45px;
+
+    background:#fff;
+
+    color:#1565c0;
+
+    padding:14px 40px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.18);
+
+    transition:.3s;
+
+    z-index:2;
+
+    animation:zoomIn 1.5s ease;
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+
+}
+
+.crm-tag:hover{
+
+    transform:translateY(-4px);
+
+    background:#f5f7ff;
+}

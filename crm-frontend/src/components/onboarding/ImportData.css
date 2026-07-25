@@ -1,0 +1,313 @@
+/* ==========================================================
+   IMPORT DATA
+========================================================== */
+
+.import-data{
+    width:100%;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.import-header{
+
+    margin-bottom:35px;
+}
+
+.import-header h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+.import-header p{
+
+    font-size:17px;
+
+    color:#64748B;
+
+    line-height:1.6;
+
+    max-width:600px;
+}
+
+/* ==========================================================
+   IMPORT GRID
+========================================================== */
+
+.import-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:30px;
+}
+
+/* ==========================================================
+   IMPORT CARD
+========================================================== */
+
+.import-card{
+
+    background:#FFFFFF;
+
+    border:2px solid #E3EAF8;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 6px 15px rgba(37,99,235,.05);
+}
+
+.import-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.10);
+}
+
+.import-card.selected{
+
+    border-color:#2563EB;
+
+    background:#EEF4FF;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.15);
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.import-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#1E40AF,#2563EB);
+
+    color:#FFFFFF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+}
+
+/* ==========================================================
+   CARD CONTENT
+========================================================== */
+
+.import-card h3{
+
+    font-size:22px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+.import-card p{
+
+    color:#64748B;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+/* ==========================================================
+   FILE INPUT
+========================================================== */
+
+.import-card input[type="file"]{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #D8E2F0;
+
+    border-radius:10px;
+
+    background:#FFFFFF;
+
+    margin-bottom:15px;
+
+    cursor:pointer;
+}
+
+/* ==========================================================
+   FILE NAME
+========================================================== */
+
+.file-name{
+
+    display:block;
+
+    margin-bottom:18px;
+
+    color:#2563EB;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    word-break:break-word;
+}
+
+/* ==========================================================
+   DOWNLOAD BUTTON
+========================================================== */
+
+.download-btn{
+
+    width:100%;
+
+    height:46px;
+
+    border:1px solid #2563EB;
+
+    border-radius:10px;
+
+    background:#FFFFFF;
+
+    color:#2563EB;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.download-btn:hover{
+
+    background:#EEF4FF;
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.import-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:40px;
+}
+
+.secondary-btn{
+
+    flex:1;
+
+    height:50px;
+
+    border:1px solid #2563EB;
+
+    border-radius:10px;
+
+    background:#FFFFFF;
+
+    color:#2563EB;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.secondary-btn:hover{
+
+    background:#EEF4FF;
+}
+
+.primary-btn{
+
+    flex:1;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#1E40AF,#2563EB);
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+    .import-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .import-footer{
+
+        flex-direction:column;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:100%;
+    }
+
+    .import-header h2{
+
+        font-size:32px;
+    }
+
+}
