@@ -53,11 +53,12 @@ function LoginForm() {
                 <button type="submit">
                     Sign In
                 </button>
+            </form>
                 <div className="bottom-text">
                     Don't have an account
                     <Link to="/signup"> Sign Up</Link>
                 </div>
-            </form>
+            
         </>
     );
 }

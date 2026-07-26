@@ -306,3 +306,17 @@
         font-size:17px;
     }
 }
+.bottom-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #64748b;
+}
+.bottom-text a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+.bottom-text a:hover {
+    text-decoration: underline;
+}
