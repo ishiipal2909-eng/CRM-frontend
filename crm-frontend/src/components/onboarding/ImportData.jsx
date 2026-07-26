@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./ImportData.css";
+import { useNavigate } from "react";
 
 function ImportData({ previousStep }) {
 
   const [selectedOption, setSelectedOption] = useState("empty");
   const [fileName, setFileName] = useState("");
-
+  const navigate = useNavigate();
   const handleFileChange = (e) => {
 
     if (e.target.files.length > 0) {
@@ -112,7 +113,7 @@ function ImportData({ previousStep }) {
 
         <button
           className="primary-btn"
-          onClick={finishSetup}
+          onClick= {() => navigation("/dashboard")}
         >
           Finish Setup →
         </button>

@@ -5,6 +5,7 @@ import {
   FaEnvelope,
   FaTag,
   FaRocket,
+  FaLock,
 } from "react-icons/fa";
 
 import "./Signup.css";
@@ -16,6 +17,8 @@ function Signup() {
   const [formData, setFormData] = useState({
     companyName: "",
     email: "",
+    password:"",
+    confirmPassword:"",
     plan: "Trial",
     slug: "",
   });
@@ -42,18 +45,26 @@ function Signup() {
       ...formData,
       [name]: value,
     });
-
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (formData.password !== formData.confirmPassword){
+        alert("Password do not match!!");
+        return;
+      }
+      if (formData.password.length<6){
+        alert("Password must be at least of 6 characters!!");
+        return;
+      }
+      console.log(formData);
+      navigate("/login")
+    };
   };
 
-  const handleSubmit = (e) => {
-
-    e.preventDefault();
-
-    console.log(formData);
-
-    navigate("/login");
-
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(formData);
+  //   navigate("/login");
+  // };
 
   return (
 
@@ -94,6 +105,27 @@ function Signup() {
               required
             />
           </div>
+          <label>Password</label>
+            <div className="input-box">
+              <FaLock />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder={formData.password}
+                  onChange={handleChange}
+                  required
+                  />
+            </div>
+          <label>Confirm Password</label>
+            <div className="input-box">
+              <input
+                type="password"
+                name="password"
+                value={formData.confirmPassword}
+                onChange="{handleChange}"
+                required
+                />
+            </div>
 
           <label>Plan</label>
 
