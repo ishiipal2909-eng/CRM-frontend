@@ -1,0 +1,451 @@
+/* ==========================================================
+   INVITE USERS
+========================================================== */
+
+.invite-users{
+    width:100%;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.invite-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:35px;
+}
+
+.invite-header h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+.invite-header p{
+
+    font-size:17px;
+
+    color:#64748B;
+
+    line-height:1.6;
+
+    max-width:550px;
+}
+
+/* ==========================================================
+   SKIP BUTTON
+========================================================== */
+
+.skip-btn{
+
+    width:90px;
+
+    height:42px;
+
+    border:1px solid #2563EB;
+
+    background:#FFFFFF;
+
+    color:#2563EB;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.skip-btn:hover{
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+}
+
+/* ==========================================================
+   INVITE FORM
+========================================================== */
+
+.invite-form{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr auto;
+
+    gap:20px;
+
+    align-items:end;
+
+    margin-bottom:35px;
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#111827;
+}
+
+.form-group input,
+.form-group select{
+
+    height:52px;
+
+    padding:0 16px;
+
+    border:1px solid #D8E2F0;
+
+    border-radius:10px;
+
+    background:#FFFFFF;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* ==========================================================
+   ADD MEMBER BUTTON
+========================================================== */
+
+.add-member-btn{
+
+    height:52px;
+
+    padding:0 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#1E40AF,#2563EB);
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.add-member-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+}
+
+/* ==========================================================
+   MEMBERS SECTION
+========================================================== */
+
+.members-section{
+
+    margin-top:20px;
+}
+
+.empty-members{
+
+    text-align:center;
+
+    padding:60px;
+
+    border:2px dashed #D9E5F8;
+
+    border-radius:18px;
+
+    background:#FFFFFF;
+}
+
+.empty-members h3{
+
+    font-size:22px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+.empty-members p{
+
+    color:#64748B;
+}
+
+/* ==========================================================
+   MEMBER CARD
+========================================================== */
+
+.member-card{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:18px;
+
+    background:#FFFFFF;
+
+    border:1px solid #E3EAF8;
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+    box-shadow:0 6px 15px rgba(37,99,235,.05);
+}
+
+.member-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.10);
+}
+
+/* ==========================================================
+   AVATAR
+========================================================== */
+
+.avatar{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#1E40AF,#2563EB);
+
+    color:#FFFFFF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-right:16px;
+}
+
+/* ==========================================================
+   MEMBER DETAILS
+========================================================== */
+
+.member-details{
+
+    flex:1;
+}
+
+.member-details h4{
+
+    font-size:16px;
+
+    color:#111827;
+
+    margin-bottom:4px;
+}
+
+.member-details span{
+
+    color:#64748B;
+
+    font-size:14px;
+}
+
+/* ==========================================================
+   DELETE BUTTON
+========================================================== */
+
+.delete-btn{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.delete-btn:hover{
+
+    background:#FECACA;
+
+    transform:scale(1.05);
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.invite-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:35px;
+}
+
+.secondary-btn{
+
+    flex:1;
+
+    height:50px;
+
+    border:1px solid #2563EB;
+
+    border-radius:10px;
+
+    background:#FFFFFF;
+
+    color:#2563EB;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.secondary-btn:hover{
+
+    background:#EEF4FF;
+}
+
+.primary-btn{
+
+    flex:1;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#1E40AF,#2563EB);
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+    .invite-header{
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .invite-form{
+
+        grid-template-columns:1fr;
+    }
+
+    .invite-footer{
+
+        flex-direction:column;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .add-member-btn{
+
+        width:100%;
+    }
+
+    .skip-btn{
+
+        width:100%;
+    }
+
+    .member-card{
+
+        flex-wrap:wrap;
+
+        gap:15px;
+    }
+
+    .delete-btn{
+
+        margin-left:auto;
+    }
+
+}

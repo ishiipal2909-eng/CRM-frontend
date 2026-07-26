@@ -1,0 +1,445 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+html,
+body,
+#root{
+    width:100%;
+    height:100%;
+}
+
+/* ===========================
+   PAGE
+=========================== */
+
+.signup-page{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+
+    padding-right:90px;
+
+    background:
+    linear-gradient(
+        rgba(9,30,66,.45),
+        rgba(9,30,66,.45)
+    ),
+    url("../../assets/signup.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+    position:relative;
+}
+
+/* Floating Circle */
+
+.signup-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-150px;
+    right:-120px;
+
+    animation:floatCircle 8s ease-in-out infinite;
+}
+
+.signup-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    bottom:-120px;
+    left:-100px;
+
+    animation:floatCircle2 10s ease-in-out infinite;
+}
+
+@keyframes floatCircle{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(20px);
+    }
+
+}
+
+@keyframes floatCircle2{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.signup-card{
+
+    width:100%;
+    max-width:500px;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.94);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+
+    animation:cardUp .8s ease-out;
+
+    z-index:2;
+}
+
+@keyframes cardUp{
+
+    0%{
+        opacity:0;
+        transform:translateY(80px) scale(.95);
+    }
+    70%{
+        opacity:1;
+        transform:translateY(-8px) scale(1.01);
+
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ===========================
+   HEADING
+=========================== */
+
+.signup-card h1{
+
+    text-align:center;
+
+    font-size:30px;
+
+    color:#0f172a;
+
+    font-weight:600;
+
+    margin-bottom:7px;
+}
+
+.signup-card p{
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    margin-bottom:20px;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.signup-card form{
+
+    display:flex;
+    flex-direction:column;
+}
+
+.signup-card label{
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#334155;
+
+    margin-bottom:6px;
+
+    margin-top:10px;
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.input-box{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    height:50px;
+
+    padding:0 16px;
+
+    border-radius:12px;
+
+    border:1px solid #dbeafe;
+
+    background:#ffffff;
+
+    transition:.3s;
+}
+
+.input-box:hover{
+
+    border-color:#2563eb;
+}
+
+.input-box:focus-within{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+.input-box svg{
+
+    color:#2563eb;
+
+    font-size:18px;
+}
+
+.input-box input,
+.input-box select{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:15px;
+
+    color:#1e293b;
+}
+
+.input-box input::placeholder{
+
+    color:#94a3b8;
+}
+
+.input-box select{
+
+    cursor:pointer;
+}
+
+/* ===========================
+   URL
+=========================== */
+
+.workspace-url{
+
+    margin-top:18px;
+
+    padding:12px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.signup-card button{
+
+    width:100%;
+
+    height:52px;
+
+    margin-top:22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.signup-card button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.7s;
+}
+
+.signup-card button:hover::before{
+
+    left:100%;
+}
+
+.signup-card button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.35);
+}
+
+/* ===========================
+   LOGIN
+=========================== */
+
+.bottom-text{
+
+    text-align:center;
+
+    margin-top:22px;
+
+    font-size:14px;
+
+    color:#64748b;
+}
+
+.bottom-text a{
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.bottom-text a:hover{
+
+    color:#1d4ed8;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+    .signup-page{
+
+        justify-content:center;
+
+        padding:20px;
+
+        background-position:left center;
+    }
+
+    .signup-card{
+
+        max-width:430px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .signup-card{
+
+        padding:25px;
+    }
+
+    .signup-card h1{
+
+        font-size:28px;
+    }
+
+    .signup-card button{
+
+        height:48px;
+    }
+
+}
