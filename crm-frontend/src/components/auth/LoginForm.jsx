@@ -1,5 +1,6 @@
 import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
     FaEnvelope,
     FaLock,
@@ -52,6 +53,10 @@ function LoginForm() {
                 <button type="submit">
                     Sign In
                 </button>
+                <div className="bottom-text">
+                    Don't have an account
+                    <Link to="/signup"> Sign Up</Link>
+                </div>
             </form>
         </>
     );
