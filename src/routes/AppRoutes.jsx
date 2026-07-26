@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "../pages/Login/Login";
-import Onboarding from "../pages/Onboarding/Onboarding";
 import LeadPage from "../pages/leads/LeadPage";
 import ContactPage from "../pages/contacts/ContactPage";
 import ContactDetails from "../pages/ContactDetails/ContactDetails";
