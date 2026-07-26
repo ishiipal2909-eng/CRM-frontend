@@ -11,8 +11,6 @@ function AppRoutes() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/Onboarding" element={<Onboarding />} />
                 <Route path="/leads" element={<LeadPage />} />
                 <Route path="/contacts" element={<ContactPage />} />
                 <Route path="/contacts/:id" element={<ContactDetails />}/>
