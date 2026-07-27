@@ -1,0 +1,289 @@
+/* ==========================================================
+   COMPANY PROFILE
+========================================================== */
+
+.company-profile{
+    width:100%;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.company-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:35px;
+}
+
+.company-header h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+.company-header p{
+
+    font-size:17px;
+
+    color:#64748B;
+
+    max-width:500px;
+
+    line-height:1.6;
+}
+
+/* ==========================================================
+   SKIP BUTTON
+========================================================== */
+
+.skip-btn{
+
+    width:90px;
+
+    height:42px;
+
+    border:1px solid #2563EB;
+
+    border-radius:10px;
+
+    background:#FFFFFF;
+
+    color:#2563EB;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.skip-btn:hover{
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+}
+
+/* ==========================================================
+   LOGO SECTION
+========================================================== */
+
+.logo-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:35px 0;
+}
+
+.logo-box{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    border:2px dashed #2563EB;
+
+    background:#FFFFFF;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.logo-box:hover{
+
+    transform:scale(1.05);
+
+    background:#F8FBFF;
+}
+
+.logo-box img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+}
+
+.upload-icon{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+}
+
+.logo-box span{
+
+    font-size:14px;
+
+    color:#2563EB;
+
+    font-weight:600;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.company-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:20px;
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#111827;
+}
+
+.form-group input,
+.form-group select{
+
+    height:52px;
+
+    padding:0 16px;
+
+    border:1px solid #D8E2F0;
+
+    border-radius:10px;
+
+    background:#FFFFFF;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.company-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:35px;
+}
+
+.primary-btn{
+
+    width:220px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#1E40AF,#2563EB);
+
+    color:#FFFFFF;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+    .company-header{
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .company-form{
+
+        grid-template-columns:1fr;
+    }
+
+    .company-footer{
+
+        justify-content:center;
+    }
+
+    .primary-btn{
+
+        width:100%;
+    }
+
+    .skip-btn{
+
+        width:100%;
+    }
+
+}

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Topbar({ onOpenSearch, user }) {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <header className="topbar">
       <button className="search-trigger" onClick={onOpenSearch}>
@@ -26,7 +28,7 @@ export default function Topbar({ onOpenSearch, user }) {
               <hr />
               <button>My Profile</button>
               <button>Settings</button>
-              <button>Logout</button>
+              <button onClick={() => navigate("/login")}>Logout</button>
             </div>
           )}
         </div>

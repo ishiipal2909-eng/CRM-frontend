@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+
 const navItems = [
   { label: "Dashboard", icon: "📊" },
   { label: "My Day", icon: "☀️" },
@@ -11,9 +13,34 @@ const navItems = [
   { label: "Settings", icon: "⚙️" }
 ];
 export default function Sidebar() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [active, setActive] = React.useState("Dashboard");
+
+  React.useEffect(() => {
+    const path = location.pathname;
+    if (path.startsWith("/leads")) {
+      setActive("Leads");
+    } else if (path.startsWith("/contacts")) {
+      setActive("Contacts");
+    } else if (path.startsWith("/organizations")) {
+      setActive("Organizations");
+    }
+  }, [location.pathname]);
+
   const linkStyle = (name) => "sidebar-link " + (active === name ? "active" : "");
-  const handleClick = (e, name) => { e.preventDefault(); setActive(name); };
+  const handleClick = (e, name) => {
+    if (name === "Leads" || name === "Dashboard") {
+      navigate("/leads");
+    } else if (name === "Contacts") {
+      navigate("/contacts");
+    } else if (name === "Organizations") {
+      navigate("/organizations");
+    } else {
+      e.preventDefault();
+      setActive(name);
+    }
+  };
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">Panorama CRM</div>
