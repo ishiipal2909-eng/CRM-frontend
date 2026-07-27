@@ -8,6 +8,9 @@ import {
   FaLock,
 } from "react-icons/fa";
 
+import { signupUser } from "../../services/authService";
+import signupBg from "../../assets/signup.png";
+
 import "./Signup.css";
 
 function Signup() {
@@ -22,6 +25,8 @@ function Signup() {
     plan: "Trial",
     slug: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
 
@@ -45,30 +50,40 @@ function Signup() {
       ...formData,
       [name]: value,
     });
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (formData.password !== formData.confirmPassword){
-        alert("Password do not match!!");
-        return;
-      }
-      if (formData.password.length<6){
-        alert("Password must be at least of 6 characters!!");
-        return;
-      }
-      console.log(formData);
-      navigate("/login")
-    };
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formData);
-  //   navigate("/login");
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+    if (formData.password.length < 6) {
+      alert("Password must be at least 6 characters!");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await signupUser(formData);
+      navigate("/login");
+    } catch (err) {
+      setError(err.message || "Signup failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
 
-    <div className="signup-page">
+    <div
+      className="signup-page"
+      style={{
+        backgroundImage: `linear-gradient(rgba(9, 30, 66, 0.25), rgba(9, 30, 66, 0.25)), url(${signupBg})`,
+      }}
+    >
 
       <div className="signup-card">
 
@@ -111,18 +126,21 @@ function Signup() {
                 <input
                   type="password"
                   name="password"
-                  placeholder={formData.password}
+                  placeholder="Enter password"
+                  value={formData.password}
                   onChange={handleChange}
                   required
                   />
             </div>
           <label>Confirm Password</label>
             <div className="input-box">
+              <FaLock />
               <input
                 type="password"
-                name="password"
+                name="confirmPassword"
+                placeholder="Confirm password"
                 value={formData.confirmPassword}
-                onChange="{handleChange}"
+                onChange={handleChange}
                 required
                 />
             </div>

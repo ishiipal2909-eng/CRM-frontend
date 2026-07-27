@@ -3,6 +3,7 @@ import "./LoginForm.css";
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 import {Link,useNavigate} from "react-router-dom";
+import { loginUser } from "../../services/authService";
 import {
     FaEnvelope,
     FaLock,
@@ -13,13 +14,21 @@ function LoginForm() {
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
-    const handleLogin = (e) =>{
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const handleLogin = async (e) => {
         e.preventDefault();
-        //Later: claa you backend API to verify email & passwordd
-        // API dalo backend team
-        console.log("Login: ",{email,password});
-        navigate("/onboarding");
-    }
+        setLoading(true);
+        setError("");
+        try {
+            await loginUser(email, password);
+            navigate("/onboarding");
+        } catch (err) {
+            setError(err.message || "Invalid email or password!");
+        } finally {
+            setLoading(false);
+        }
+    };
     return (
         <>
             <h2>
