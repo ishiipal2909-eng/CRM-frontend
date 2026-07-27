@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* 1. Page & Print Setup (Crucial for ERPNext) */
+    .page-container {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm; /* Large top/side margins like the design */
+        margin: 20px auto;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    @media print {
+        body { margin: 0; padding: 0; }
+        .page-container {
+            margin: 0;
+            box-shadow: none;
+            width: 100%;
+        }
+    }
+
+    /* General Spacing */
+    p { margin: 4px 0; font-size: 16px; line-height: 1.5; }
+    .label { font-weight: bold; color: #000; font-size: 18px; margin-bottom: 5px; }
+    .company-name { font-size: 26px; font-weight: 800; margin: 0 0 10px 0; }
+
+    /* --------------------------------- */
+    /* 2. Top Section (Logo & Header)   */
+    /* --------------------------------- */
+    .header-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 60px;
+    }
+    .logo {
+        height: 120px; /* Matched to design */
+        width: 120px;
+    }
+    .invoice-title {
+        font-size: 48px;
+        font-weight: 800;
+        color: #000;
+        margin-bottom: 25px;
+        text-align: right;
+    }
+    .invoice-info table {
+        border-collapse: collapse;
+        text-align: right;
+        margin-left: auto; /* Pushes table to the right */
+        font-size: 16px;
+    }
+    .invoice-info th {
+        color: #999;
+        font-weight: normal;
+        padding-right: 20px;
+    }
+    .invoice-info td {
+        font-weight: bold;
+        color: #000;
+    }
+
+    /* --------------------------------- */
+    /* 3. Address Section (Flexbox)     */
+    /* --------------------------------- */
+    .address-section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 70px; /* Space until the empty gap */
+    }
+
+    .from-section {
+        text-align: left;
+    }
+
+    /* Right Group (Stacks Bill to and Ship to) */
+    .right-group {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+    }
+
+    .to-section {
+        margin-bottom: 40px; /* Space between the two address blocks */
+    }
+
+    /* --------------------------------- */
+    /* 4. The Empty Gap (Table replacement) */
+    /* --------------------------------- */
+    .empty-table-gap {
+        height: 250px; /* Create space where the blue table was */
+        margin-bottom: 50px;
+    }
+
+    /* --------------------------------- */
+    /* 5. Totals & Instructions Section */
+    /* --------------------------------- */
+    .bottom-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .instructions {
+        text-align: left;
+        max-width: 300px;
+    }
+    .bold-instruction { font-weight: bold; margin-top: 20px; }
+
+    /* Totals Table Structure */
+    .totals-wrapper {
+        text-align: right;
+    }
+    .totals-table {
+        border-collapse: collapse;
+        margin-left: auto;
+    }
+    .totals-table td {
+        padding: 5px 0 5px 40px;
+        font-size: 16px;
+    }
+    .totals-table td.total-label { color: #555; }
+    .totals-table td.total-value { font-weight: bold; }
+
+    /* The "Balance Due" highlighted row */
+    .balance-row td {
+        background-color: #f6f8fb;
+        padding: 15px 15px 15px 40px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .balance-row td.total-label { color: #000; }
+
+    /* --------------------------------- */
+    /* 6. Notes & Signature Section      */
+    /* --------------------------------- */
+    .notes-section {
+        margin-top: 60px;
+        text-align: left;
+    }
+    .notes-section p { color: #666; max-width: 400px; }
+
+    .signature-section {
+        text-align: right;
+        margin-top: -60px; /* Pulls signature up to align with notes */
+        padding-right: 40px;
+    }
+    .signature-image {
+        height: 100px;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="page-container">
+    <div class="header-section">
+        <img class="logo" src="sk_logo.png">
+        <div class="header-right">
+            <div class="invoice-title">Purchase Invoice</div>
+            <div class="invoice-info">
+                <table>
+                    <tr><th>Invoice no.:</th><td>001</td></tr>
+                    <tr><th>Invoice date:</th><td>Jul 13th, 2021</td></tr>
+                    <tr><th>Due:</th><td>Feb 13th, 2021</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="address-section">
+        <div class="from-section">
+            <p class="label">From</p>
+            <h3 class="company-name">Saldo Apps</h3>
+            <p>John Smith</p>
+            <p>wiz@saldoapps.com</p>
+            <p>80296979597</p>
+            <p>saldoapps.com</p>
+            <p>First str., 28-32, Chicago, USA</p>
+        </div>
+
+        <div class="right-group">
+            <div class="to-section">
+                <p class="label">Bill to</p>
+                <h3 class="company-name">Shepard corp.</h3>
+                <p>shepard@mail.com</p>
+                <p>80296979597</p>
+                <p>North str., 32, Chicago, USA</p>
+            </div>
+            <div class="ship_to">
+                <p class="label">Ship to</p>
+                <p>North str., 32, Chicago, USA</p>
+                <p>Track #: RO80296979597</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom-section">
+        <div class="instructions">
+            <p class="label">Payment instruction</p>
+            <p>Paypal email</p>
+            <p>wiz@saldoapps.com</p>
+            <p class="bold-instruction">Make checks payable to</p>
+            <p>John Smith</p>
+            <p class="bold-instruction">Bank Transfer</p>
+            <p>Routing (ABA): 061120084</p>
+        </div>
+
+        <div class="totals-wrapper">
+            <table class="totals-table">
+                <tr><td class="total-label">Subtotal:</td><td class="total-value">USD 8000.00</td></tr>
+                <tr><td class="total-label">Discount (20%):</td><td class="total-value">USD 0.00</td></tr>
+                <tr><td class="total-label">Shipping Cost:</td><td class="total-value">USD 0.00</td></tr>
+                <tr><td class="total-label">Sales Tax:</td><td class="total-value">USD 450.00</td></tr>
+                <tr><td class="total-label">Total:</td><td class="total-value">USD 8,450.00</td></tr>
+                <tr><td class="total-label">Amount paid:</td><td class="total-value">USD 0.00</td></tr>
+                <tr class="balance-row"><td class="total-label">Balance Due:</td><td class="total-value">USD 8,450.00</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="notes-section">
+        <p class="label">Notes</p>
+        <p>Prototype-based programming is a style of object-oriented programming in which behavior reuse is performed via a process.</p>
+    </div>
+
+    <div class="signature-section">
+        <img class="signature-image" src="signature.png">
+    </div>
+
+</div>
+
+</body>
+</html>

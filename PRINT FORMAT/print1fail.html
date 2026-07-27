@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+        }
+        .style{
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+        }
+        .image {
+                    height: auto;      /* Let the height adjust naturally */
+                    width: 100px;     /* Set a reasonable width for a logo */
+                    padding: 10px;    /* Reduce this so it doesn't overlap */
+                    display: block;
+                }
+        .header{
+            color:Black;
+            text-align:right;
+            font-size:30px;
+            font-family:'Times New Roman', Times, serif;
+            font-weight:700;
+            padding-right: 5px;
+        }
+        .table_style{
+            display:flex;
+            justify-content: flex-end;
+            border-spacing:2px 2px;
+            padding-right:0cm;
+            text-align:right;
+            font-size:20px;
+            
+        }
+        th{
+            color:#ccc;
+        }
+        .center_text_row{
+            font-size :20px;
+            padding:0px 0px 0px 0px;
+            font-weight:bold;
+            display:flex;
+            justify-content:space-between;
+        }
+
+
+        .text1{
+            text-align:left
+        }
+        .text2{
+            text-align:right;
+        }
+        .text3 p {
+            margin-top:0px;
+            padding-top:5px;
+        }
+        .text3{
+
+            font-size:25px;
+            font-weight:bolder;
+            display:flex;
+            justify-content:space-between;
+            padding:0 0px; 
+        }
+        .address{
+            justify-content:space-between;
+            display:flex;
+        }
+        .from-section{
+            font-size:15px;
+            text-align:left;
+            padding-left:0px;
+
+        }   
+
+        .from-section p{
+            margin: 0px ;
+        }
+        .to-section{
+            font-size:15px;
+            text-align:right;
+            padding-right:0px;
+
+        }
+        .to-section p{
+            margin:0px;
+        }
+    /*    .ship_to{
+            font-size:15px;
+            text-align:right;
+            padding-right:0px;
+            margin:0px;
+        }
+        .ship_to p{
+            font-size:40px;
+            padding-right:0px;
+            
+        }
+        .variable{
+            font-size:1.3
+            font-weight:bold;
+        }*/
+        .ship_to{
+            font-size:15px;
+            text-align:right;
+
+            
+        }
+        h1{
+            font-weight:bold;
+            padding:0px 0px 0px 0px;
+        }
+    </style>
+    <div class="page-container">
+    <div class="style">
+<img class="image" src="{{ frappe.utils.get_url('/files/sk_logo.png') }}">            </div>
+    </div>  
+                <div class="table_style">
+                <table>
+                    <tr>
+                        <th>Invoice no:</th>
+                        <td>001</td>
+                    </tr>
+                    <tr>
+                        <th>Invoice date:</th>
+                        <td>07-02-25</td>
+                    </tr>
+                    <tr>
+                        <th>Due:</th>
+                        <td>20-02-26</td>
+                    </tr>
+                </table> 
+                </div>                   
+                <div class="center_text_row"> 
+                    <div class="text1">From</div>
+                    <div class="text2">Bill to</div>
+                </div>
+                <div class="text3">
+                    <p style="text-align:left;"> Slado Apps</p>
+                    <p style="text-align:right;">  Shepard corp</p>
+                </div>
+                <div class="address">
+                    <div class="from-section">
+                        <p class="Name">Gaurav Jain</p>
+                        <p class="Email">gauravjain6065@gmail.com</p>
+                        <p class="contact">8291437626</p>
+                        <p class="webpage">padmavatijewel@.com</p>
+                        <p class="add">Ghatkopar, Mumbai 400048</p>
+                     </div>  
+                    <div class="to-section">
+                        <p class="Email">abhishekpandiya@gmail.com</p>
+                        <p class="contact">8291437625</p>
+                        <p class="add">kanjulmarg mumbai 400080</p>
+                    </div>  
+                </div>
+                    <div class="ship_to">
+                        <div class="single">
+                            <h1>Ship to</h1>
+                            <div class="add">kanjulmarg mumbai 400080</div>
+                            <div class="Track">Track#:ROSDDWEUFH34</div>
+                        </div>
+                    </div>
+                    
+

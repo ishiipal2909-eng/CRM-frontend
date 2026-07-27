@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+        }
+        .style{
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+        }
+        .image{
+            height:250px;
+            width:250px;
+            padding:50px;
+        }
+        .header{
+            color:Black;
+            text-align:right;
+            font-size:100px;
+            font-family:'Times New Roman', Times, serif;
+            font-weight:700;
+            padding: 80px;
+        }
+        .table_style{
+            display:flex;
+            justify-content: flex-end;
+            border-spacing:12px 12px;
+            padding-right:58px;
+            text-align:left;
+            font-size:28px;
+        }
+        th{
+            color:#ccc;
+        }
+        .center_text_row{
+            font-size :39px;
+            padding:50px 50px 0px 50px;
+            font-weight:bold;
+            display:flex;
+            justify-content:space-between;
+        }
+
+
+        .text1{
+            text-align:left
+        }
+        .text2{
+            text-align:right;
+        }
+        .text3 p {
+            margin-top:0px;
+            padding-top:5px;
+        }
+        .text3{
+
+            font-size:1.3cm;
+            font-weight:bolder;
+            display:flex;
+            justify-content:space-between;
+            padding:0 50px; 
+        }
+        .address{
+            justify-content:space-between;
+        }
+        .from-section{
+            font-size:30px;
+            text-align:left;
+            padding-left:50px;
+
+        }   
+
+        .from-section p{
+            margin: 10px ;
+        }
+        .to-section{
+            font-size:30px;
+            text-align:right;
+            padding-right:57px;
+
+        }
+        .to-section p{
+            margin:10px;
+        }
+        .ship_to{
+            font-size:30px;
+            text-align:right;
+            padding-right:57px;  
+        }
+    
+    </style>
+    <div class="style">
+        <img class="image" src="sk_logo.png">     
+            <div class="header">
+             Purchase Invoice
+            </div>
+    </div>  
+                <div class="table_style">
+                <table>
+                    <tr>
+                        <th>Invoice no:</th>
+                        <td>{{doc.invoice_no}}</td>
+                    </tr>
+                    <tr>
+                        <th>Invoice date:</th>
+                        <td>{{doc.invoice_date}}</td>
+                    </tr>
+                    <tr>
+                        <th>Due:</th>
+                        <td>{{doc.due}}</td>
+                    </tr>
+                </table> 
+                </div>                   
+                <div class="center_text_row"> 
+                    <div class="text1">From</div>
+                    <div class="text2">Bill to</div>
+                </div>
+                <div class="text3">
+                    <p style="text-align:left;"> Slado Apps</p>
+                    <p style="text-align:right;">  Shepard corp</p>
+                </div>
+                <div class="address">
+                    <div class="from-section">
+                        <p class="Name">Gaurav Jain</p>
+                        <p class="Email">gauravjain6065@gmail.com</p>
+                        <p class="contact">8291437626</p>
+                        <p class="webpage">padmavatijewel@.com</p>
+                        <p class="add">Ghatkopar, Mumbai 400048</p>
+                     </div>  
+                    <div class="to-section">
+                        <p class="Email">abhishekpandiya@gmail.com</p>
+                        <p class="contact">8291437625</p>
+                        <p class="add">kanjulmarg mumbai 400080</p>
+                    </div>  
+                    <div class="ship_to">
+                        <h1 style="font: size 400px; padding-right:8px;">Ship to</h1>
+                        <div class="add" padding-bottom:200px;>kanjulmarg mumbai 400080</div>
+                        <div class="Track" padding-top:10px;>Track#:ROSDDWEUFH34</div>
+                    </div> 
+
+
+                </div>  
