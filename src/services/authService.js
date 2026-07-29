@@ -14,6 +14,15 @@ export async function loginUser(usr, pwd) {
   });
 }
 
+export async function checkSlugAvailability(slug) {
+  return await apiRequest(
+    `/api/method/crm_saas.api.signup.check_slug?slug=${encodeURIComponent(slug)}`,
+    {
+      method: "GET",
+    }
+  );
+}
+
 export async function logoutUser() {
   return await apiRequest("/api/method/logout", {
     method: "POST",

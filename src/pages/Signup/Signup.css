@@ -300,6 +300,24 @@ body,
     font-weight:600;
 }
 
+.slug-status {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+.slug-status.available { color: #16a34a; }
+.slug-status.taken { color: #dc2626; }
+.slug-status.checking { color: #2563eb; }
+
+.error-message {
+    margin-top: 10px;
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
 /* ===========================
    BUTTON
 =========================== */

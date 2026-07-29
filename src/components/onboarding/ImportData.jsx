@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./ImportData.css";
-import { useNavigate } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ImportData({ previousStep }) {
 
   const [selectedOption, setSelectedOption] = useState("empty");
   const [fileName, setFileName] = useState("");
   const navigate = useNavigate();
+
   const handleFileChange = (e) => {
 
     if (e.target.files.length > 0) {
@@ -17,12 +18,7 @@ function ImportData({ previousStep }) {
   };
 
   const finishSetup = () => {
-
-    alert("🎉 CRM Setup Completed Successfully!");
-
-    // Later:
-    // navigate("/dashboard")
-
+    navigate("/dashboard");
   };
 
   return (
@@ -113,7 +109,7 @@ function ImportData({ previousStep }) {
 
         <button
           className="primary-btn"
-          onClick= {() => navigation("/dashboard")}
+          onClick={finishSetup}
         >
           Finish Setup →
         </button>

@@ -7,13 +7,15 @@ import { loginUser } from "../../services/authService";
 import {
     FaEnvelope,
     FaLock,
-    FaEye
+    FaEye,
+    FaEyeSlash
 } from "react-icons/fa";
 
 function LoginForm() {
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const handleLogin = async (e) => {
@@ -55,13 +57,17 @@ function LoginForm() {
                 <div className="input-box">
                     <FaLock />
                     <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         placeholder="Enter your password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <FaEye className="eye-icon"/>
+                    {showPassword ? (
+                        <FaEyeSlash className="eye-icon" onClick={() => setShowPassword(false)} />
+                    ) : (
+                        <FaEye className="eye-icon" onClick={() => setShowPassword(true)} />
+                    )}
                 </div>
 
                 <div className="login-options">
@@ -73,8 +79,11 @@ function LoginForm() {
                         Forgot Password?
                     </a>
                 </div>
-                <button type="submit">
-                    Sign In
+
+                {error && <div className="error-message">{error}</div>}
+
+                <button type="submit" disabled={loading}>
+                    {loading ? "Signing In..." : "Sign In"}
                 </button>
             </form>
                 <div className="bottom-text">

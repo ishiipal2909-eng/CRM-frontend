@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaBuilding,
@@ -8,7 +8,7 @@ import {
   FaLock,
 } from "react-icons/fa";
 
-import { signupUser } from "../../services/authService";
+import { signupUser, checkSlugAvailability } from "../../services/authService";
 import signupBg from "../../assets/signup.png";
 
 import "./Signup.css";
@@ -27,6 +27,34 @@ function Signup() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [slugStatus, setSlugStatus] = useState({ checking: false, available: null, message: "" });
+
+  // Live slug checking effect
+  useEffect(() => {
+    if (!formData.slug || formData.slug.trim().length === 0) {
+      setSlugStatus({ checking: false, available: null, message: "" });
+      return;
+    }
+
+    setSlugStatus({ checking: true, available: null, message: "Checking availability..." });
+
+    const timer = setTimeout(async () => {
+      try {
+        const res = await checkSlugAvailability(formData.slug);
+        // Frappe returns { message: { available: true/false, message: "..." } } or direct JSON
+        const result = res.message || res;
+        if (result.available) {
+          setSlugStatus({ checking: false, available: true, message: "✓ Workspace URL is available!" });
+        } else {
+          setSlugStatus({ checking: false, available: false, message: result.message || "Slug is not available." });
+        }
+      } catch (err) {
+        setSlugStatus({ checking: false, available: null, message: "" });
+      }
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [formData.slug]);
 
   const handleChange = (e) => {
 
@@ -55,6 +83,11 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
+    if (slugStatus.available === false) {
+      setError(slugStatus.message || "Please choose an available workspace slug.");
+      return;
+    }
 
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
@@ -175,8 +208,20 @@ function Signup() {
             https://{formData.slug || "workspace"}.crm.com
           </div>
 
-          <button type="submit">
-            Start Free Trial
+          {slugStatus.message && (
+            <div
+              className={`slug-status ${
+                slugStatus.available ? "available" : slugStatus.checking ? "checking" : "taken"
+              }`}
+            >
+              {slugStatus.message}
+            </div>
+          )}
+
+          {error && <div className="error-message">{error}</div>}
+
+          <button type="submit" disabled={loading || slugStatus.available === false}>
+            {loading ? "Creating Workspace..." : "Start Free Trial"}
           </button>
 
         </form>

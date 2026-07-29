@@ -320,3 +320,15 @@
 .bottom-text a:hover {
     text-decoration: underline;
 }
+
+.error-message {
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 4px;
+}
